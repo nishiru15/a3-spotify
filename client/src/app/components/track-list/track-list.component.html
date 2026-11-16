@@ -33,7 +33,7 @@
 				}
 				<!--Use @if to hide if hideAlbum is true; link to the album's endpoint and display the album's name-->
 				@if (!hideAlbum){
-					<td><a [routerLink] = "'/album' + track.album.id">{{track.album.name}}</a></td>
+					<td><a [routerLink] = "'/album/' + track.album.id">{{track.album.name}}</a></td>
 				}
 			</tr>
 		}
