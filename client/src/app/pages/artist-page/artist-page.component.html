@@ -20,9 +20,10 @@
 			<!--TODO: Display a carousel component for the artist's albums. Bind carousel's resources and give it a static carouselId.-->
 		</div>
 		<div class="col-xl-4 col-12">
-			<!--TODO: display artist name-->
-			<h3>???'s Top Tracks</h3>
-			<!--TODO: display the artist's top tracks-->
+			<!--display artist name-->
+			<h3>{{artists.name}}'s Top Tracks</h3>
+			<!--display the artist's top tracks-->
+			<app-track-list [tracks] = "topTracks" [hideArtist] = 'true'></app-track-list>
 		</div>
 	</div>
 }

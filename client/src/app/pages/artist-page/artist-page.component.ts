@@ -25,6 +25,10 @@ export class ArtistPageComponent implements OnInit {
     this.spotifyService.getArtist(this.artistId).then((data)=>{
       this.artist = data;
     });
+
+    this.spotifyService.getTopTracksForArtist(this.artistId).then((data)=>{
+      this.topTracks = data;
+    });
   }
 
 }
