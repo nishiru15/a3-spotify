@@ -16,8 +16,9 @@
 			<p>??? followers</p>
 			<app-thermometer [popularity]="artist.popularity"></app-thermometer>
 			<!--TODO: display artist name-->
-			<h3>???'s Albums</h3>
-			<!--TODO: Display a carousel component for the artist's albums. Bind carousel's resources and give it a static carouselId.-->
+			<h3>{{artist.name}}'s Albums</h3>
+			<!--Display a carousel component for the artist's albums. Bind carousel's resources and give it a static carouselId.-->
+			<app-carousel [resources] = "albums" carouselId= "artistAlbumCarousel"></app-carousel>
 		</div>
 		<div class="col-xl-4 col-12">
 			<!--display artist name-->

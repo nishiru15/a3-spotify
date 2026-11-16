@@ -73,8 +73,11 @@ export class SpotifyService {
   }
 
   getAlbumsForArtist(artistId:string):Promise<AlbumData[]> {
-    //TODO: use the albums for an artist endpoint to make a request to express.
-    return null as any;
+    //use the albums for an artist endpoint to make a request to express.
+    var endpoint = '/artist-albums/' + encodeURIComponent(artistId);
+    return this.sendRequestToExpress(endpoint).then((data)=>{
+      return data.items.map((item)=>new AlbumData(item));
+    });
   }
 
   getAlbum(albumId:string):Promise<AlbumData> {
