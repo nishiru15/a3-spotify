@@ -41,7 +41,18 @@ export class SpotifyService {
     //Make sure you're encoding the resource with encodeURIComponent().
     //Depending on the category (artist, track, album), return an array of that type of data.
     //JavaScript's "map" function might be useful for this, but there are other ways of building the array.
-    return null as any;
+    var endpoint = '/search/' + category +'/' + encodeURIComponent(resource);
+    return this.sendRequestToExpress(endpoint).then((data)=>{
+      if(category == 'artist'){
+        return data.artists.items.map((item)=> new ArtistData(item));
+      }
+      else if(category == 'album'){
+        return data.albums.items.map((item)=> new AlbumData(item));
+      }
+      else{
+        return data.tracks.items.map((item)=>new TrackData(item));
+      }
+    });
   }
 
   getArtist(artistId:string):Promise<ArtistData> {
