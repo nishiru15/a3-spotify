@@ -13,7 +13,6 @@ export class AboutComponent implements OnInit {
   profile_link:string = null;
 
 
-  //TODO: inject the Spotify service
   constructor(private spotifyService: SpotifyService) { }
 
   ngOnInit() {
