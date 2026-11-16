@@ -56,9 +56,12 @@ export class SpotifyService {
   }
 
   getArtist(artistId:string):Promise<ArtistData> {
-    //TODO: use the artist endpoint to make a request to express.
+    //use the artist endpoint to make a request to express.
     //Again, you may need to encode the artistId.
-    return null as any;
+    var endpoint = '/artist/' + encodeURIComponent(artistId);
+    return this.sendRequestToExpress(endpoint).then((data)=>{
+      return new ArtistData(data);
+    });
   }
 
   getTopTracksForArtist(artistId:string):Promise<TrackData[]> {

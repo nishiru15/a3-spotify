@@ -1,13 +1,13 @@
 @if(artist) {
 	<div class="row">
 		<div class="col-xl-4 col-12">
-			<!--TODO: populate with artist name-->
-			<h1></h1>
-			<!--TODO: populate with artist image URL-->
-			<img id="artistImg" src="assets/unknown.jpg">
+			<!--populate with artist name-->
+			<h1>{{artist.name}}</h1>
+			<!--populate with artist image URL-->
+			<img id="artistImg" src="artist.imageURL">
 			<p>
-				<!--TODO: link to artist page on spotify, display artist name-->
-				<a class="btn btn-light" role="button" target="_blank">Open ??? on Spotify</a>
+				<!--link to artist page on spotify, display artist name-->
+				<a class="btn btn-light" role="button" target="_blank" [href] = "artist.url">Open {{artist.name}} on Spotify</a>
 			</p>
 		</div>
 		<div class="col-xl-4 col-12">
