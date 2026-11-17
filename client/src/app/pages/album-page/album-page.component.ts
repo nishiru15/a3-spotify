@@ -25,6 +25,9 @@ export class AlbumPageComponent implements OnInit {
     this.spotifyService.getAlbum(this.albumId).then((data)=>{
       this.album = data;
     });
+    this.spotifyService.getTracksForAlbum(this.albumId).then((data)=>{
+      this.tracks = data;
+    });
   }
 
 }
